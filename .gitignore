@@ -27,7 +27,7 @@ __pycache__
 *.pid
 *.db
 .env
-.venv
+./.venv
 
 # NPM / Yarn
 node_modules/
