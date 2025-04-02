@@ -1,0 +1,19 @@
+{
+  "user": {
+    "title": "Full Stack Developer",
+    "firstName": "Evgeny",
+    "lastName": "Eysner",
+    "btnText": "",
+    "image": "Hero_person",
+    "hero_content": [
+      {
+        "count": "8+",
+        "text": "Jahrelange Erfahrung in der Webentwicklung"
+      },
+      {
+        "count": "20+",
+        "text": "In meiner Karriere durchgeführte Projekte"
+      }
+    ]
+  }
+}

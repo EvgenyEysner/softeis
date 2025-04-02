@@ -1,12 +1,12 @@
 // import components
-import {Home} from "./pages/Home";
+import {Home} from "./Pages/Home";
 import Navbar from "./Layouts/Navbar";
-import Skills from "./pages/Skills";
-import Service from "./pages/Services";
-import Projects from "./pages/Projects";
+import Skills from "./Pages/Skills";
+import Service from "./Pages/Services";
+import Projects from "./Pages/Projects";
 // import Testimonials from "./components/Testimonials";
 // import Hireme from "./components/Hireme";
-import Contact from "./pages/Contact";
+import Contact from "./Pages/Contact";
 import { useEffect } from "react";
 // Animation package
 import Aos from "aos";

@@ -1,8 +1,13 @@
-// import content
-import { useEffect } from "react";
-import { content } from "../Content";
+import {useEffect, useState} from "react";
+import {content} from "../Content";
+import {useTranslation} from "react-i18next";
+import i18n from "../i18n.js";
+
+
+
 export const Home = () => {
-  const { hero } = content;
+  const {hero} = content;
+  const {t, i18n} = useTranslation();
 
   return (
     <section id="home" className="overflow-hidden">
@@ -21,7 +26,7 @@ export const Home = () => {
         {/* first col */}
         <div className="pb-16 px-6 pt-5" data-aos="fade-down">
           <h2>{hero.title}</h2>
-          <br />
+          <br/>
           <div className="flex flex-col gap-10 mt-10">
             {hero.hero_content.map((content, i) => (
               <div
