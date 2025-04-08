@@ -1,0 +1,44 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# Visual Studio Code
+.vscode/
+
+# JetBrains
+.idea/
+
+# OSX
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Basics
+__pycache__
+*.pid
+*.db
+.env
+.venv
+.python-version
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# Logs
+*.log
+pip-log.txt
+
+# Unit test / coverage reports
+.coverage
+.tox
+builds
+htmlcov
+test-reports
+
+# Translations
+*.mo
+*.pot
