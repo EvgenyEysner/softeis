@@ -11,6 +11,7 @@ import { useEffect } from "react";
 // Animation package
 import Aos from "aos";
 import "aos/dist/aos.css";
+import {content} from "./Content.js";
 
 const App = () => {
   useEffect(() => {
@@ -32,7 +33,7 @@ const App = () => {
       <Contact />
       <footer className="p-3 text-center">
         <h6 className="mb-3">Evgeny Eysner</h6>
-        <p>Softeis © All CopyRights Reserved 2025</p>
+        <p>{content.Footer.text}</p>
       </footer>
     </div>
   );

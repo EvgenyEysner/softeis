@@ -3,6 +3,7 @@ import { content } from "../Content";
 import emailjs from "@emailjs/browser";
 import toast, { Toaster } from "react-hot-toast";
 
+// Todo remove emailjs and use backend
 const Contact = () => {
   const { Contact } = content;
   const form = useRef();
