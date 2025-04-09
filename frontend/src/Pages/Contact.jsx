@@ -1,39 +1,44 @@
-import { createElement, useRef } from "react";
-import { content } from "../Content";
-import emailjs from "@emailjs/browser";
-import toast, { Toaster } from "react-hot-toast";
+import {createElement, useRef} from "react";
+import {content} from "../Content";
+import toast, {Toaster} from "react-hot-toast";
 
-// Todo remove emailjs and use backend
+
 const Contact = () => {
-  const { Contact } = content;
+  const {Contact} = content;
   const form = useRef();
 
   // Sending Email
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm(
-      'YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY'
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          // Clear all input field values
-          form.current.reset();
-          // Success toast message
-          toast.success("Email send Successfully");
+    const formData = {
+      from_name: form.current.from_name.value,
+      user_email: form.current.user_email.value,
+      message: form.current.message.value
+    };
+
+    try {
+      const response = await fetch('http://127.0.0.1:8000/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
         },
-        (error) => {
-          console.log(error.text);
-          toast.error(error.text);
-        }
-      );
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) throw new Error('Server error');
+
+      form.current.reset();
+      toast.success("Email sent successfully");
+    } catch (error) {
+      console.error('Error:', error);
+      toast.error(error.message || 'Failed to send email');
+    }
   };
 
   return (
     <section className="bg-dark_primary text-white" id="contact">
-      <Toaster />
+      <Toaster/>
       <div className="md:container px-5 py-14">
         <h2 className="title !text-white" data-aos="fade-down">
           {Contact.title}
@@ -41,7 +46,7 @@ const Contact = () => {
         <h4 className="subtitle" data-aos="fade-down">
           {Contact.subtitle}
         </h4>
-        <br />
+        <br/>
         <div className="flex gap-10 md:flex-row flex-col">
           <form
             ref={form}

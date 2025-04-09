@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 30px;
+        }
+
+        .header {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .content {
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>Neue Kontaktanfrage von {{ from_name }}</h1>
+    </div>
+    <div class="content">
+        <p><strong>Email:</strong> {{ user_email }}</p>
+        <p><strong>Nachricht:</strong></p>
+        <p>{{ message }}</p>
+    </div>
+</div>
+</body>
+</html>
